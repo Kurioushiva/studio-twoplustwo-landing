@@ -1,3 +1,8 @@
+/* Reset and base styles */
+.App {
+  /* Do not center align - this disrupts natural reading flow */
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -31,4 +36,92 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Japanese minimalism inspired styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Micro-interactions - subtle hover effects only */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Gentle fade transitions */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid rgb(132 148 132);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Ensure proper contrast and readability */
+::selection {
+  background-color: rgba(132, 148, 132, 0.2);
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
 }
